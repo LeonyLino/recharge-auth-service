@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: recharge-auth
+  cloud:
+    config:
+      name: recharge-auth
+---
+spring:
+  application:
+    name: recharge-auth
+  config:
+    activate:
+      on-profile: dev
+    import: optional:configserver:http://localhost:8080/
+  cloud:
+    config:
+      name: recharge-auth
+      username: mirante
+      password: mirante@123
